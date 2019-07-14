@@ -6,13 +6,13 @@
 #    By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/13 17:17:11 by sgusache          #+#    #+#              #
-#    Updated: 2019/07/13 17:18:51 by sgusache         ###   ########.fr        #
+#    Updated: 2019/07/14 15:49:43 by sgusache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= phonebook
 
-SRC		= megaphone.cpp
+SRC		= main.cpp phonebook.cpp contact.cpp
 CFLAG	= -Wall -Wextra -Werror
 
 all: $(NAME)
