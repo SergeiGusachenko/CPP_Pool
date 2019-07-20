@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 10:54:12 by sgusache          #+#    #+#             */
-/*   Updated: 2019/07/19 17:37:23 by sgusache         ###   ########.fr       */
+/*   Created: 2019/07/18 13:24:44 by sgusache          #+#    #+#             */
+/*   Updated: 2019/07/18 19:11:30 by sgusache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-#include <iostream>
-#include <string.h>
-#include "ClapTrap.hpp"
-class	ScavTrap : public ClapTrap
+#include "Fixed.hpp"
+
+int main( void )
 {
-	public:
-						ScavTrap();
-						ScavTrap(std::string name);
-						ScavTrap(const ScavTrap &rhs);
-						~ScavTrap();
-	ScavTrap 			& operator=(ScavTrap const &rhs);
-	void				challengeNewcomer(std::string const & target);
-};
-#endif
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+	return 0;
+}

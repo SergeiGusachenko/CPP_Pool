@@ -6,7 +6,7 @@
 /*   By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/14 15:32:17 by sgusache          #+#    #+#             */
-/*   Updated: 2019/07/14 15:47:25 by sgusache         ###   ########.fr       */
+/*   Updated: 2019/07/15 21:18:04 by sgusache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int main()
 	Phonebook phonebook;
 	std::cout << "Hi ! it's Awesome Phone Book" << std::endl;
 	std::cout << "You can use this commands to manage your contacts :" << std::endl;
-	std::cout << "EXIT - quits programm and the contacts lost forever." << std::endl;
-	std::cout << "ADD - new contact [first name, last name, nickname, login, postal address, email address, phone number, birthday date, favorite meal, underwear color, darkest secret]" << std::endl;
+	std::cout << "EXIT" << std::endl;
+	std::cout << "ADD" << std::endl;
 	std::cout << "SEARCH" << std::endl;
 	while(true)
 		get_command(phonebook);

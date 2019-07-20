@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 10:54:12 by sgusache          #+#    #+#             */
-/*   Updated: 2019/07/19 17:37:23 by sgusache         ###   ########.fr       */
+/*   Created: 2019/07/20 10:42:53 by sgusache          #+#    #+#             */
+/*   Updated: 2019/07/20 14:00:30 by sgusache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-#include <iostream>
-#include <string.h>
-#include "ClapTrap.hpp"
-class	ScavTrap : public ClapTrap
+#ifndef PLASMARIFLE_HPP
+# define PLASMARIFLE_HPP
+#include "AWeapon.hpp"
+
+class PlasmaRifle: public AWeapon
 {
 	public:
-						ScavTrap();
-						ScavTrap(std::string name);
-						ScavTrap(const ScavTrap &rhs);
-						~ScavTrap();
-	ScavTrap 			& operator=(ScavTrap const &rhs);
-	void				challengeNewcomer(std::string const & target);
+		PlasmaRifle();
+		PlasmaRifle(const PlasmaRifle &rhs);
+		virtual void  attack(void) const;
+		PlasmaRifle	& operator=(const PlasmaRifle &rhs);
+		virtual ~PlasmaRifle();
 };
 #endif

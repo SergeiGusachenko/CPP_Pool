@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 10:54:12 by sgusache          #+#    #+#             */
-/*   Updated: 2019/07/19 17:37:23 by sgusache         ###   ########.fr       */
+/*   Created: 2019/07/18 23:30:02 by sgusache          #+#    #+#             */
+/*   Updated: 2019/07/19 18:35:40 by sgusache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-#include <iostream>
+#ifndef FLAGTRAP_HPP
+# define FLAGTRAP_HPP
 #include <string.h>
+#include <iostream>
 #include "ClapTrap.hpp"
-class	ScavTrap : public ClapTrap
+class FragTrap : public ClapTrap
 {
 	public:
-						ScavTrap();
-						ScavTrap(std::string name);
-						ScavTrap(const ScavTrap &rhs);
-						~ScavTrap();
-	ScavTrap 			& operator=(ScavTrap const &rhs);
-	void				challengeNewcomer(std::string const & target);
+		void	vaulthunter_dot_exe(std::string const & target);
+							FragTrap();
+							FragTrap(FragTrap const &rhs);
+							FragTrap(std::string name);
+							~FragTrap();
+		FragTrap 			& operator=(FragTrap const &rhs);
 };
 #endif

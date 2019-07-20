@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Victim.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 10:54:12 by sgusache          #+#    #+#             */
-/*   Updated: 2019/07/19 17:37:23 by sgusache         ###   ########.fr       */
+/*   Created: 2019/07/19 23:23:23 by sgusache          #+#    #+#             */
+/*   Updated: 2019/07/20 01:19:38 by sgusache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef VICTIM_HPP
+#define VICTIM_HPP
 #include <iostream>
 #include <string.h>
-#include "ClapTrap.hpp"
-class	ScavTrap : public ClapTrap
+
+class Victim
 {
+	private:
+	std::string name;
+					Victim();
 	public:
-						ScavTrap();
-						ScavTrap(std::string name);
-						ScavTrap(const ScavTrap &rhs);
-						~ScavTrap();
-	ScavTrap 			& operator=(ScavTrap const &rhs);
-	void				challengeNewcomer(std::string const & target);
+						Victim(std::string name);
+						Victim(const Victim &rhs);
+		Victim			& operator=(Victim const &rhs);
+						~Victim();
+		void			introduce();
+		virtual void	getPolymorphed(void) const;
+		std::string		getName() const;
 };
+std::ostream			&operator<< (std::ostream &out, const Victim &rhs);
 #endif

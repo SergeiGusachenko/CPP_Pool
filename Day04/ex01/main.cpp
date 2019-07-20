@@ -5,26 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 09:50:56 by sgusache          #+#    #+#             */
-/*   Updated: 2019/07/19 17:37:34 by sgusache         ###   ########.fr       */
+/*   Created: 2019/07/20 13:44:38 by sgusache          #+#    #+#             */
+/*   Updated: 2019/07/20 14:17:32 by sgusache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#include "Character.hpp"
+#include "Enemy.hpp"
+#include "AWeapon.hpp"
+#include "RadScorpion.hpp"
+#include "RadScorpion.hpp"
+#include "PlasmaRifle.hpp"
+#include "PowerFist.hpp"
+
 int main()
 {
-	ClapTrap parent = ClapTrap("parent");
-	std::cout << "BATTLE CRY"<< std::endl;
-	FragTrap mr_popo = FragTrap("Mr. Popo");
-	FragTrap goku = FragTrap("Goku");
-	ScavTrap sc = ScavTrap("ASD");
-	goku.takeDamage(mr_popo.getMeleeAttackDamage());
-	mr_popo.takeDamage(goku.getRangedAttack());
-	mr_popo.takeDamage(goku.getSqlInjectionAttackDamage());
-	mr_popo.vaulthunter_dot_exe(goku.getName());
-	sc.challengeNewcomer(goku.getName());
-	mr_popo = goku;
+	Character* zaz = new Character("zaz");	//norm
+	std::cout << *zaz; 						//norm zaz has 40 AP and is unarmend
+	Enemy* b = new RadScorpion();
+	AWeapon* pr = new PlasmaRifle();
+	AWeapon* pf = new PowerFist();
+	zaz->equip(pr);
+	std::cout << *zaz;
+	zaz->equip(pf);
+	zaz->attack(b);
+	std::cout << *zaz;
+	zaz->equip(pr);
+	std::cout << *zaz;
+	zaz->attack(b);
+	std::cout << *zaz;
+	zaz->attack(b);
+	std::cout << *zaz;
 	return 0;
 }

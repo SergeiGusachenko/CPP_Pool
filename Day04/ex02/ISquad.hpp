@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ISquad.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 10:54:12 by sgusache          #+#    #+#             */
-/*   Updated: 2019/07/19 17:37:23 by sgusache         ###   ########.fr       */
+/*   Created: 2019/07/20 14:47:29 by sgusache          #+#    #+#             */
+/*   Updated: 2019/07/20 15:51:43 by sgusache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef ISQUAD_HPP
+# define ISQUAD_HPP
+#include "ISpaceMarine.hpp"
 #include <iostream>
 #include <string.h>
-#include "ClapTrap.hpp"
-class	ScavTrap : public ClapTrap
+class ISquad
 {
 	public:
-						ScavTrap();
-						ScavTrap(std::string name);
-						ScavTrap(const ScavTrap &rhs);
-						~ScavTrap();
-	ScavTrap 			& operator=(ScavTrap const &rhs);
-	void				challengeNewcomer(std::string const & target);
+		virtual ~ISquad() {}
+		virtual int getCount() const = 0;
+		virtual ISpaceMarine* getUnit(int) const = 0;
+		virtual int push(ISpaceMarine*) = 0;
 };
-#endif
+# endif

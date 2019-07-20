@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 10:54:12 by sgusache          #+#    #+#             */
-/*   Updated: 2019/07/19 17:37:23 by sgusache         ###   ########.fr       */
+/*   Created: 2019/07/18 10:54:04 by sgusache          #+#    #+#             */
+/*   Updated: 2019/07/19 08:51:00 by sgusache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FIXED_HPP
+#define  FIXED_HPP
 #include <iostream>
-#include <string.h>
-#include "ClapTrap.hpp"
-class	ScavTrap : public ClapTrap
+class Fixed
 {
+	private:
+		int fixed_p;
+		static const int frac_p;
 	public:
-						ScavTrap();
-						ScavTrap(std::string name);
-						ScavTrap(const ScavTrap &rhs);
-						~ScavTrap();
-	ScavTrap 			& operator=(ScavTrap const &rhs);
-	void				challengeNewcomer(std::string const & target);
+		Fixed();
+		Fixed(Fixed const &fixed);
+		~Fixed();
+		Fixed & operator=(Fixed const &rhs);
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 };
 #endif

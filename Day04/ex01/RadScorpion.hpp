@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 10:54:12 by sgusache          #+#    #+#             */
-/*   Updated: 2019/07/19 17:37:23 by sgusache         ###   ########.fr       */
+/*   Created: 2019/07/20 12:56:15 by sgusache          #+#    #+#             */
+/*   Updated: 2019/07/20 13:04:22 by sgusache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-#include <iostream>
-#include <string.h>
-#include "ClapTrap.hpp"
-class	ScavTrap : public ClapTrap
+#ifndef REDSCORPION_HPP
+# define REDSCORPION_HPP
+
+#include "Enemy.hpp"
+
+class RadScorpion : public Enemy
 {
+	private:
+		/* data */
 	public:
-						ScavTrap();
-						ScavTrap(std::string name);
-						ScavTrap(const ScavTrap &rhs);
-						~ScavTrap();
-	ScavTrap 			& operator=(ScavTrap const &rhs);
-	void				challengeNewcomer(std::string const & target);
+		RadScorpion(const RadScorpion &rhs);
+		RadScorpion	& operator=(RadScorpion const &rhs);
+		RadScorpion();
+		void	takeDamage(int);
+		~RadScorpion();
 };
 #endif

@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Peon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 10:54:12 by sgusache          #+#    #+#             */
-/*   Updated: 2019/07/19 17:37:23 by sgusache         ###   ########.fr       */
+/*   Created: 2019/07/19 23:58:25 by sgusache          #+#    #+#             */
+/*   Updated: 2019/07/20 00:53:44 by sgusache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef PEON_HPP
+#define PEON_HPP
+#include "Victim.hpp"
 #include <iostream>
 #include <string.h>
-#include "ClapTrap.hpp"
-class	ScavTrap : public ClapTrap
+
+class Peon:public Victim
 {
+	private:
+					std::string name;
+					Peon();
 	public:
-						ScavTrap();
-						ScavTrap(std::string name);
-						ScavTrap(const ScavTrap &rhs);
-						~ScavTrap();
-	ScavTrap 			& operator=(ScavTrap const &rhs);
-	void				challengeNewcomer(std::string const & target);
+					Peon(std::string name);
+					Peon(const Peon &rhs);
+		Peon		& operator=(Peon const &rhs);
+		void		getPolymorphed(void) const;
+					~Peon();
 };
+
 #endif

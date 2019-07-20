@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Enemy.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 10:54:12 by sgusache          #+#    #+#             */
-/*   Updated: 2019/07/19 17:37:23 by sgusache         ###   ########.fr       */
+/*   Created: 2019/07/20 11:26:25 by sgusache          #+#    #+#             */
+/*   Updated: 2019/07/20 14:10:01 by sgusache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef ENEMY_HPP
+# define ENEMY_HPP
 #include <iostream>
 #include <string.h>
-#include "ClapTrap.hpp"
-class	ScavTrap : public ClapTrap
+
+class Enemy
 {
+	protected:
+		int hp;
+		std::string type;
 	public:
-						ScavTrap();
-						ScavTrap(std::string name);
-						ScavTrap(const ScavTrap &rhs);
-						~ScavTrap();
-	ScavTrap 			& operator=(ScavTrap const &rhs);
-	void				challengeNewcomer(std::string const & target);
+		Enemy();
+		Enemy(int hp, std::string const & type);
+		Enemy(const Enemy &rhs);
+		Enemy	& operator=(Enemy const &rhs);
+		virtual ~Enemy();
+		std::string getType() const;
+		int getHP() const;
+		virtual void takeDamage(int);
 };
 #endif

@@ -5,26 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 09:50:56 by sgusache          #+#    #+#             */
-/*   Updated: 2019/07/19 17:37:34 by sgusache         ###   ########.fr       */
+/*   Created: 2019/07/18 13:24:44 by sgusache          #+#    #+#             */
+/*   Updated: 2019/07/18 17:06:41 by sgusache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-int main()
+#include "Fixed.hpp"
+
+int main( void )
 {
-	ClapTrap parent = ClapTrap("parent");
-	std::cout << "BATTLE CRY"<< std::endl;
-	FragTrap mr_popo = FragTrap("Mr. Popo");
-	FragTrap goku = FragTrap("Goku");
-	ScavTrap sc = ScavTrap("ASD");
-	goku.takeDamage(mr_popo.getMeleeAttackDamage());
-	mr_popo.takeDamage(goku.getRangedAttack());
-	mr_popo.takeDamage(goku.getSqlInjectionAttackDamage());
-	mr_popo.vaulthunter_dot_exe(goku.getName());
-	sc.challengeNewcomer(goku.getName());
-	mr_popo = goku;
+	Fixed a;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
+	a = Fixed( 1234.4321f );
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return 0;
 }

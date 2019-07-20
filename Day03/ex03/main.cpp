@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 10:54:12 by sgusache          #+#    #+#             */
-/*   Updated: 2019/07/19 17:37:23 by sgusache         ###   ########.fr       */
+/*   Created: 2019/07/19 09:50:56 by sgusache          #+#    #+#             */
+/*   Updated: 2019/07/19 18:50:04 by sgusache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-#include <iostream>
-#include <string.h>
 #include "ClapTrap.hpp"
-class	ScavTrap : public ClapTrap
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
+
+int main()
 {
-	public:
-						ScavTrap();
-						ScavTrap(std::string name);
-						ScavTrap(const ScavTrap &rhs);
-						~ScavTrap();
-	ScavTrap 			& operator=(ScavTrap const &rhs);
-	void				challengeNewcomer(std::string const & target);
-};
-#endif
+	ClapTrap parent = ClapTrap("parent");
+	std::cout << "BATTLE CRY"<< std::endl;
+	FragTrap mr_popo = FragTrap("Mr. Popo");
+	FragTrap goku = FragTrap("Goku");
+	ScavTrap sc = ScavTrap("ASD");
+	NinjaTrap nj = NinjaTrap("Ninja");
+	nj.ninjaShoebox(sc);
+	return 0;
+}
