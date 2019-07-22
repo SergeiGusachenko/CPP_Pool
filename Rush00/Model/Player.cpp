@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Player.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dezzeddi <dezzeddi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sgusache <sgusache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/20 20:30:47 by sgusache          #+#    #+#             */
-/*   Updated: 2019/07/21 22:52:39 by nwhitlow         ###   ########.fr       */
+/*   Updated: 2019/07/22 10:16:49 by sgusache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	Player::move(std::string dirrection)
 	float new_x = this->x;
 	float new_y = this->y;
 	if (dirrection == "right")
-		new_x += 1.7;
+		new_x += 3.7;
 	if (dirrection == "left")
-		new_x -= 1.7;
+		new_x -= 3.7;
 	if (dirrection == "up")
-		new_y += 0.7;
+		new_y += 3.7;
 	if (dirrection == "down")
-		new_y -= 0.7;
+		new_y -= 3.7;
 	this->x = new_x;
 	this->y = new_y;
 }
